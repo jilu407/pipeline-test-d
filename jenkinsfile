@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('install') {
+            steps {
+               sh 'mvn install' 
+            }
+        }
+        stage('test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage('compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+        stage('clean') {
+            steps {
+                sh 'mvn clean'
+            }
+        }
+        stage('validate') {
+            steps {
+                sh 'mvn validate'
+            }
+        }
+        stage('verify') {
+            steps {
+                sh 'mvn verify'
+            }
+        }
+        stage('sandaya-1') {
+            steps {
+                echo 'hi sandya'
+            }
+        }
+        stage('manzeer-1') {
+            steps {
+                echo 'Hello manzeer'
+            }
+        }
+    }
+}
